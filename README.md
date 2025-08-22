@@ -16,6 +16,9 @@ Wir möchten ein RPG erstellen, das Aspekte aus denn Games Elden Ring und Pokemo
 - [X] Arbeitspaket 2: Schreiben Sie eine Liste, welche Klassen und Objekte es braucht, und wie diese miteinander interagieren. Das Format ist Ihnen freigestellt, aber Sie müssen es auch bereits heute auf github laden. (Dieses AP dauert ausnahmsweise nur 15')
 - [X] Arbeitspaket 3 (Falls Sie den *maker space* besuchen, dann dürfen Sie diesen Punkt löschen. Ansonsten können Sie hier mit dem Coden beginnen, nachdem Sie sich ganz klar überlegt haben, was Ihr erster Schritt ist und den hier als AP festgehalten haben.)
 
+
+![WhatsApp Bild 2025-08-22 um 12 02 03_eca10560](https://github.com/user-attachments/assets/37a33d08-dc41-4258-853b-f09c60e46318)
+
 Heute haben wir, da wir nicht so viel Zeit hatten nur das Intro und die Klassenauswahl programmiert. Anschliessend haben wir auf ein Blatt die 8 Charaktere erstellt und versucht sie zu balancen was noch recht schwierig war.
 
 ## 29.8
