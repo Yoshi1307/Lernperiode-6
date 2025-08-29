@@ -1,4 +1,4 @@
-# Lern-Periode 6
+# Lernperiode-6
 
 22.8 bis 19.9.2024
 
@@ -23,10 +23,16 @@ Heute haben wir, da wir nicht so viel Zeit hatten nur das Intro und die Klassena
 
 ## 29.8
 
-- [ ] Charakter-auswahl fertig coden
-- [ ] Konzept für gegner erstellen (Offline)
+- [X] Charakter-auswahl fertig coden
+- [X] Konzept für gegner erstellen (Offline)
 - [ ] Storybeginn überlegen
 
-✍️ Heute habe ich... (50-100 Wörter)
+Heute haben wir die Charakterauswahl fertig gecodet. Nachdem man einen Charakter auswählt werden jetzt auch sofort die dazugehörigen Stats ausgewählt. Als Offline Arbeitspaket haben wir uns die neuen Gegner überlegt und wie sie Auftauchen. 
 
-☝️ Vergessen Sie nicht, Ihren Code auf github hochzuladen
+![Image](https://github.com/user-attachments/assets/07192829-7202-4a01-afd1-d1a16a3e1264)
+
+
+## 5.9
+- [ ] Charaktere wieder zu Klassen machen
+- [ ] Gegner in den Code einfügen
+- [ ] Storybeginn überlegen
