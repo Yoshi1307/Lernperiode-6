@@ -35,4 +35,4 @@ Heute haben wir die Charakterauswahl fertig gecodet. Nachdem man einen Charakter
 ## 5.9
 - [ ] Charaktere wieder zu Klassen machen
 - [ ] Gegner in den Code einfügen
-- [ ] Storybeginn überlegen
+- [ ] Storybeginn überlegen (offline)
