@@ -43,6 +43,12 @@ Heute haben wir nicht so viel machen können, weil wir den ganzen Code umschreib
 
 
 ## 12.9
-- [ ] Gegner in den Code einfügen
-- [ ] Start des Spieles Coden
+- [X] Gegner in den Code einfügen
+- [X] Start des Spieles Coden
 - [ ] Ersten Basic Kampf ohne Abilitys einfügen
+
+Heute haben wir die Gegner programmiert. Einen Anfang des Spiels gibt es auch schon, also man kann jetzt reisen und sich ausruhen. Beim Reisen passiert noch nichts Richtiges. Die Gegner werden erstellt, man kann aber noch nicht mit ihnen interagieren. Beim Ausruhen läuft ein Countdown runter und man heilt sich um 15 Hp. Wir mussten noch einen Bug fixen, womit man sich über die MaxHp heilen konnte. Für das Kampfsystem hat es uns eben nicht mehr gereicht.
+
+## 21.09
+- [ ] Mit dem Kampfsystem anfangen (wie verteilt/bekommt man Schaden)
+- [ ] Die Fähigkeiten der verschiedenen Klassen/Charaktere einfügen
