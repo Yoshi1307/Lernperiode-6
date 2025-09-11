@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace Text_RPG
 {
     class Program
     {
+
         static void Main()
         {
             Console.WriteLine("Hallo");
@@ -21,7 +23,7 @@ namespace Text_RPG
             List<Character> characters = new List<Character>();
             Character selectedCharacter = null;
 
-            
+
             switch (selectionClass)
             {
                 case "1":
@@ -81,6 +83,104 @@ namespace Text_RPG
             else if (selectedCharacter is Magician magicianSelected) magicianSelected.ShowStats();
             else if (selectedCharacter is Warrior warriorSelected) warriorSelected.ShowStats();
             else if (selectedCharacter is Healer healerSelected) healerSelected.ShowStats();
+
+
+
+            Random rnd = new Random();
+            bool ausgeruht = false;
+            int wave = 0;
+
+            Goblin goblin = new Goblin();
+            Skeleton skeleton = new Skeleton();
+            Wolf wolf = new Wolf();
+            Spider spider = new Spider();
+            Dragon dragon = new Dragon();
+
+            while (true)
+            {
+                Console.WriteLine($"--- Runde {wave + 1} ---");
+                Console.WriteLine("Was möchtest du tun?");
+                Console.WriteLine("1. Reisen");
+                Console.WriteLine("2. Ausruhen");
+                Console.Write("Deine Wahl: ");
+                string action = Console.ReadLine();
+
+                if (action == "1")
+                {
+                    wave++;
+
+                    Console.WriteLine($"\nRunde {wave}: Du gehst auf Reisen...\n");
+                    ausgeruht = false;
+
+                    Enemy enemy;
+
+                    if (wave % 15 == 0)
+                    {
+                        enemy = dragon;
+                        dragon = dragon.NextDragon(); 
+                    }
+                    else
+                    {
+                        int choiceEnemy = rnd.Next(4); 
+                        switch (choiceEnemy)
+                        {
+                            case 0:
+                                enemy = goblin;
+                                goblin = goblin.NextGoblin();
+                                break;
+                            case 1:
+                                enemy = skeleton;
+                                skeleton = skeleton.NextSkeleton();
+                                break;
+                            case 2:
+                                enemy = wolf;
+                                wolf = wolf.NextWolf();
+                                break;
+                            case 3:
+                                enemy = spider;
+                                spider = spider.NextSpider();
+                                break;
+                            default:
+                                enemy = new Goblin();
+                                break;
+                        }
+                    }
+
+                    Console.WriteLine($"Ein {enemy.Name} erscheint!");
+                    enemy.ShowStats();
+
+                // Hier müssen wir das Kampfsystem einbauen
+                }
+                else if (action == "2")
+                {
+                    if (ausgeruht)
+                    {
+                        Console.WriteLine("Du kannst dich nur einmal ausruhen, bevor du wieder reisen musst!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nDu ruhst dich aus. (+15 HP)");
+
+                        for (int Countdown = 10; Countdown > 0; Countdown--)
+                        {
+                            Console.Write($"\rWartezeit: {Countdown} Sekunden   ");
+                            Thread.Sleep(1000);
+                        }
+
+                        Console.WriteLine("\nFertig ausgeruht!");
+                        selectedCharacter.Heal(15);
+                        ausgeruht = true;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Ungültige Eingabe, bitte wähle 1 oder 2.");
+                }
+
+                Console.WriteLine("\nDrücke eine Taste, um fortzufahren...");
+                Console.ReadKey();
+            }
         }
     }
 }
+         

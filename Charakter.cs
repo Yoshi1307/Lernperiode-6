@@ -19,12 +19,21 @@ namespace Text_RPG
         public int FreezeChance { get; set; }
         public string Item { get; set; }
 
+        public int MaxHP { get; set; }
+
         public Character(string name, int hp, int damage, string item)
         {
             Name = name;
             HP = hp;
             Damage = damage;
             Item = item;
+            MaxHP = hp;
+        }
+
+        public void Heal(int amount)
+        {
+            HP = Math.Min(HP + amount, MaxHP);
+            Console.WriteLine($"Du wurdest geheilt! HP: {HP}/{MaxHP}");
         }
     }
 
