@@ -20,6 +20,6 @@ class Skeleton : Enemy
 
     public override void ShowStats()
     {
-        Console.WriteLine($"{Name} => HP= {HP}, Dmg= {Damage}, Waffe= {Weapon}");
+        Console.WriteLine($"\n{Name} => HP= {HP}, Dmg= {Damage}, Waffe= {Weapon}");
     }
 }

@@ -13,7 +13,6 @@ namespace Text_RPG
         {
             HealPerRound = healPerRound;
         }
-
         public void ShowStats()
         {
             Console.WriteLine($"{Name} => HP= {HP}, Dmg= {Damage}, HealPerRound= {HealPerRound}, Item= {Item}");

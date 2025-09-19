@@ -7,6 +7,7 @@ namespace Text_RPG
         public string Name { get; set; }
         public int HP { get; set; }
         public int Damage { get; set; }
+        public bool IsAlive => HP > 0;
 
         public Enemy(string name, int hp, int damage)
         {

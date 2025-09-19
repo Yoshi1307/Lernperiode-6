@@ -14,8 +14,4 @@ class Wolf : Enemy
         return new Wolf(HP + 3, Damage + 5);
     }
 
-    public override void ShowStats()
-    {
-        Console.WriteLine($"{Name} => HP= {HP}, Dmg= {Damage}");
-    }
 }

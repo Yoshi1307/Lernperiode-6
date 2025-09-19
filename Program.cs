@@ -23,7 +23,6 @@ namespace Text_RPG
             List<Character> characters = new List<Character>();
             Character selectedCharacter = null;
 
-
             switch (selectionClass)
             {
                 case "1":
@@ -55,10 +54,11 @@ namespace Text_RPG
             for (int i = 0; i < characters.Count; i++)
             {
                 Console.WriteLine($"{i + 1}. {characters[i].Name}");
-                if (characters[i] is Thief thief) thief.ShowStats();
+                characters[i].ShowStats();
+                /* if (characters[i] is Thief thief) thief.ShowStats();
                 else if (characters[i] is Magician magician) magician.ShowStats();
                 else if (characters[i] is Warrior warrior) warrior.ShowStats();
-                else if (characters[i] is Healer healer) healer.ShowStats();
+                else if (characters[i] is Healer healer) healer.ShowStats(); */
             }
 
             Console.Write("\nDeine Wahl (1-2): ");
@@ -79,11 +79,7 @@ namespace Text_RPG
             }
 
             Console.WriteLine("\nDeine Startwerte:");
-            if (selectedCharacter is Thief thiefSelected) thiefSelected.ShowStats();
-            else if (selectedCharacter is Magician magicianSelected) magicianSelected.ShowStats();
-            else if (selectedCharacter is Warrior warriorSelected) warriorSelected.ShowStats();
-            else if (selectedCharacter is Healer healerSelected) healerSelected.ShowStats();
-
+            selectedCharacter.ShowStats();
 
 
             Random rnd = new Random();
@@ -98,7 +94,7 @@ namespace Text_RPG
 
             while (true)
             {
-                Console.WriteLine($"--- Runde {wave + 1} ---");
+                Console.WriteLine($"\n--- Runde {wave + 1} ---");
                 Console.WriteLine("Was möchtest du tun?");
                 Console.WriteLine("1. Reisen");
                 Console.WriteLine("2. Ausruhen");
@@ -109,19 +105,20 @@ namespace Text_RPG
                 {
                     wave++;
 
-                    Console.WriteLine($"\nRunde {wave}: Du gehst auf Reisen...\n");
+                    Console.WriteLine($"\nDu gehst auf Reisen...");
                     ausgeruht = false;
+                    Thread.Sleep(1000);
 
                     Enemy enemy;
 
                     if (wave % 15 == 0)
                     {
                         enemy = dragon;
-                        dragon = dragon.NextDragon(); 
+                        dragon = dragon.NextDragon();
                     }
                     else
                     {
-                        int choiceEnemy = rnd.Next(4); 
+                        int choiceEnemy = rnd.Next(4);
                         switch (choiceEnemy)
                         {
                             case 0:
@@ -146,10 +143,46 @@ namespace Text_RPG
                         }
                     }
 
-                    Console.WriteLine($"Ein {enemy.Name} erscheint!");
+                   
+                    Console.WriteLine($"\nEin {enemy.Name} erscheint!");
+                    Thread.Sleep(1);
                     enemy.ShowStats();
 
-                // Hier müssen wir das Kampfsystem einbauen
+
+                    int RandomStart = 0;
+                    int zahl = rnd.Next(1, 3);
+
+                    while (selectedCharacter.IsAlive && enemy.IsAlive)
+                    {
+
+
+                        while (RandomStart == 0)
+                        {
+                            RandomStart++;
+
+                            Random RandomZahl = new Random();
+
+                            if (zahl == 1)
+                            {
+                                Console.WriteLine("\nDu greifst an!");
+                                enemy.HP -= selectedCharacter.Damage;
+                                Thread.Sleep(500);
+                                Console.WriteLine($"Du hast dem Gegner {selectedCharacter.Damage} Schaden hinzugefügt");
+                                Console.WriteLine($"Der Gegner hat noch {enemy.HP} HP");
+
+
+
+                            }
+                            else if (zahl == 2)
+                            {
+                                Console.WriteLine("\nDu wirst angegriffen!");
+                                selectedCharacter.HP -= enemy.Damage;
+                                Thread.Sleep(500);
+                                Console.WriteLine($"Der Gegner hat dir {enemy.Damage} Schaden hinzugefügt");
+                                Console.WriteLine($"Du hast noch {selectedCharacter.HP} HP");
+                            }
+                        }
+                    }
                 }
                 else if (action == "2")
                 {
@@ -163,7 +196,7 @@ namespace Text_RPG
 
                         for (int Countdown = 10; Countdown > 0; Countdown--)
                         {
-                            Console.Write($"\rWartezeit: {Countdown} Sekunden   ");
+                            Console.Write($"\rWartezeit: {Countdown} Sekunden");
                             Thread.Sleep(1000);
                         }
 
@@ -183,4 +216,3 @@ namespace Text_RPG
         }
     }
 }
-         

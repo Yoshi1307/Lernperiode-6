@@ -19,6 +19,8 @@ namespace Text_RPG
         public int FreezeChance { get; set; }
         public string Item { get; set; }
 
+        public bool IsAlive => HP > 0;
+
         public int MaxHP { get; set; }
 
         public Character(string name, int hp, int damage, string item)
@@ -33,10 +35,14 @@ namespace Text_RPG
         public void Heal(int amount)
         {
             HP = Math.Min(HP + amount, MaxHP);
-            Console.WriteLine($"Du wurdest geheilt! HP: {HP}/{MaxHP}");
+            Console.WriteLine($"\nDu wurdest geheilt! HP: {HP}/{MaxHP}");
         }
+    
+        public void ShowStats()
+        {
+            Console.WriteLine($"{Name} => HP= {HP}, Dmg= {Damage}, Item= {Item}");
+        }
+
+
     }
-
-
-
 }
