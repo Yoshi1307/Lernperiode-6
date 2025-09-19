@@ -49,6 +49,13 @@ Heute haben wir nicht so viel machen können, weil wir den ganzen Code umschreib
 
 Heute haben wir die Gegner programmiert. Einen Anfang des Spiels gibt es auch schon, also man kann jetzt reisen und sich ausruhen. Beim Reisen passiert noch nichts Richtiges. Die Gegner werden erstellt, man kann aber noch nicht mit ihnen interagieren. Beim Ausruhen läuft ein Countdown runter und man heilt sich um 15 Hp. Wir mussten noch einen Bug fixen, womit man sich über die MaxHp heilen konnte. Für das Kampfsystem hat es uns eben nicht mehr gereicht.
 
-## 21.09
+## 19.09
 - [ ] Mit dem Kampfsystem anfangen (wie verteilt/bekommt man Schaden)
 - [ ] Die Fähigkeiten der verschiedenen Klassen/Charaktere einfügen
+
+Heute haben wir damit begonnen, dass wenn man auf einen Gegner trifft, gewürfelt wird wer beginnt mit angreiffen. Bis jetzt wird entweder die erste Attacke des Gegners gemacht, oder von einem selbst. Weiter sind wir noch nicht gekommen, weil wir lange versucht haben einen Fehler zu beheben. Den Fehler konnten wir jetzt ganz am Ende beheben.
+
+## 17.10
+
+- [ ] Kampfsystem fertig machen
+- [ ] Abilitys einfügen
