@@ -18,5 +18,19 @@ namespace Text_RPG
         {
             Console.WriteLine($"{Name} => HP= {HP}, Dmg= {Damage}, DodgeRate= {DodgeRate}%, Item= {Item}");
         }
-    }
+
+        public void Dodge()
+        {
+            Random rnd = new Random();
+
+            if (rnd.Next(100) < 15)
+            {
+                //Dodge
+            }
+            else
+            {
+                //Kein Dodge
+            }
+        }
+    }   
 }

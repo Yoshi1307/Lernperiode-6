@@ -24,5 +24,15 @@ namespace Text_RPG
                 Console.Write($"DmgReduction= {DamageReduction}%, ");
             Console.WriteLine ($"Item= {Item}");
         }
+
+        public void Crit()
+        { 
+        
+        }
+
+        public void DmgReduction()
+        {
+
+        }
     }
 }

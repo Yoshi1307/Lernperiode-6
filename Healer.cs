@@ -17,5 +17,10 @@ namespace Text_RPG
         {
             Console.WriteLine($"{Name} => HP= {HP}, Dmg= {Damage}, HealPerRound= {HealPerRound}, Item= {Item}");
         }
+
+        public void HealerHeal()
+        {
+
+        }
     }
 }

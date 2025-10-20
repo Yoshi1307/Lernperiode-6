@@ -25,5 +25,33 @@ namespace Text_RPG
 
             Console.WriteLine($"Item= {Item}");
         }
+
+        public void Freeze()
+        {
+            Random rnd = new Random();
+
+            if (rnd.Next(100) < 15)
+            {
+                //Freeze
+            }
+            else
+            {
+                //Kein Freeze
+            }
+        }
+
+        public void Confusion()
+        {
+            Random rnd = new Random();
+
+            if (rnd.Next(100) < 15)
+            {
+                //Freeze
+            }
+            else
+            {
+                //Kein Freeze
+            }
+        }
     }
 }

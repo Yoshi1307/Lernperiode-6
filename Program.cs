@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using Text_RPG;
 
 namespace Text_RPG
 {
@@ -94,6 +95,7 @@ namespace Text_RPG
 
             while (true)
             {
+                Console.Clear();
                 Console.WriteLine($"\n--- Runde {wave + 1} ---");
                 Console.WriteLine("Was möchtest du tun?");
                 Console.WriteLine("1. Reisen");
@@ -120,7 +122,7 @@ namespace Text_RPG
                     {
                         int choiceEnemy = rnd.Next(4);
                         switch (choiceEnemy)
-                        {
+                        {      
                             case 0:
                                 enemy = goblin;
                                 goblin = goblin.NextGoblin();
@@ -155,7 +157,6 @@ namespace Text_RPG
                     while (selectedCharacter.IsAlive && enemy.IsAlive)
                     {
 
-
                         while (RandomStart == 0)
                         {
                             RandomStart++;
@@ -164,22 +165,120 @@ namespace Text_RPG
 
                             if (zahl == 1)
                             {
-                                Console.WriteLine("\nDu greifst an!");
-                                enemy.HP -= selectedCharacter.Damage;
-                                Thread.Sleep(500);
-                                Console.WriteLine($"Du hast dem Gegner {selectedCharacter.Damage} Schaden hinzugefügt");
-                                Console.WriteLine($"Der Gegner hat noch {enemy.HP} HP");
+                                do
+                                {
+                                    Console.WriteLine();
+                                    Thread.Sleep(2000);
+                                    while (!Console.KeyAvailable)
+                                    {
+                                        Console.Write("\rDrück eine Taste um anzugreifen      ");
+                                        Thread.Sleep(300);
+                                        Console.Write("\rDrück eine Taste um anzugreifen.     ");
+                                        Thread.Sleep(300);
+                                        Console.Write("\rDrück eine Taste um anzugreifen..    ");
+                                        Thread.Sleep(300);
+                                        Console.Write("\rDrück eine Taste um anzugreifen...   ");
+                                        Thread.Sleep(300);
+                                    }
+                                    Console.WriteLine("\n\rDu greifst an!                       ");
+                                    enemy.HP -= selectedCharacter.Damage;
+                                    Thread.Sleep(500);
+                                    Console.WriteLine($"\nDu hast dem Gegner {selectedCharacter.Damage} Schaden hinzugefügt");
+                                    Thread.Sleep(1500);
+                                    if (enemy.IsAlive)
+                                    {
+                                        Console.WriteLine($"Der Gegner hat noch {enemy.HP} HP");
+                                    }
+                                   
+
+                                    Thread.Sleep(500);
+                                    if (enemy.IsAlive)
+                                    {
+                                        Thread.Sleep(1000);
+                                        Console.WriteLine("\nDu wirst angegriffen!");
+                                        selectedCharacter.HP -= enemy.Damage;
+                                        Thread.Sleep(500);
+                                        Console.WriteLine($"\nDer Gegner hat dir {enemy.Damage} Schaden hinzugefügt");
+                                        if (selectedCharacter.IsAlive)
+                                        {
+                                            Console.WriteLine($"Du hast noch {selectedCharacter.HP} HP");
+                                        }
+                                        
+                                    }
+                                }
+                                while (selectedCharacter.IsAlive && enemy.IsAlive);
+
+                                if (selectedCharacter.IsAlive)
+                                {
+
+                                    Console.WriteLine($"Du hast den {enemy.Name} besiegt!");
+                                    Thread.Sleep (300);
+                                    Console.WriteLine($"\nDu hast noch {selectedCharacter.HP} HP.");
+
+                                }
+                                else                                 
+                                {
+                                    Console.WriteLine("\nDu wurdest besiegt! Game Over.");
+                                    return;
+                                }
+
 
 
 
                             }
                             else if (zahl == 2)
                             {
-                                Console.WriteLine("\nDu wirst angegriffen!");
-                                selectedCharacter.HP -= enemy.Damage;
-                                Thread.Sleep(500);
-                                Console.WriteLine($"Der Gegner hat dir {enemy.Damage} Schaden hinzugefügt");
-                                Console.WriteLine($"Du hast noch {selectedCharacter.HP} HP");
+                                do
+                                {
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine("\nDu wirst angegriffen!");
+                                    selectedCharacter.HP -= enemy.Damage;
+                                    Thread.Sleep(500);
+                                    Console.WriteLine($"\nDer Gegner hat dir {enemy.Damage} Schaden hinzugefügt");
+                                    Console.WriteLine($"Du hast noch {selectedCharacter.HP} HP");
+                                    Console.WriteLine();
+                                    if (selectedCharacter.IsAlive)
+                                    {
+                                        Thread.Sleep(1000);
+                                        while (!Console.KeyAvailable)
+                                        {
+                                            Console.Write("\rDrück eine Taste um anzugreifen      ");
+                                            Thread.Sleep(300);
+                                            Console.Write("\rDrück eine Taste um anzugreifen.     ");
+                                            Thread.Sleep(300);
+                                            Console.Write("\rDrück eine Taste um anzugreifen..    ");
+                                            Thread.Sleep(300);
+                                            Console.Write("\rDrück eine Taste um anzugreifen...   ");
+                                            Thread.Sleep(300);
+                                        }
+                                        Console.WriteLine("\n\rDu greifst an!                       ");
+                                        enemy.HP -= selectedCharacter.Damage;
+                                        Thread.Sleep(500);
+                                        Console.WriteLine($"Du hast dem Gegner {selectedCharacter.Damage} Schaden hinzugefügt");
+                                        Thread.Sleep(1500);
+                                        if (enemy.IsAlive)
+                                        {
+                                            Console.WriteLine($"Der Gegner hat noch {enemy.HP} HP");
+                                        }
+                                        
+                                    }
+                                }
+                                while (selectedCharacter.IsAlive && enemy.IsAlive);
+
+                                if (selectedCharacter.IsAlive)
+                                {
+                                    Console.WriteLine($"Du hast den {enemy.Name} besiegt!");
+                                    Thread.Sleep(300);
+                                    Console.WriteLine($"\nDu hast noch {selectedCharacter.HP} HP.");
+
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\nDu wurdest besiegt! Game Over.");
+                                    return;
+                                }
+
+
                             }
                         }
                     }
@@ -196,7 +295,7 @@ namespace Text_RPG
 
                         for (int Countdown = 10; Countdown > 0; Countdown--)
                         {
-                            Console.Write($"\rWartezeit: {Countdown} Sekunden");
+                            Console.Write($"\rWartezeit: {Countdown} Sekunden ");
                             Thread.Sleep(1000);
                         }
 
@@ -210,9 +309,21 @@ namespace Text_RPG
                     Console.WriteLine("Ungültige Eingabe, bitte wähle 1 oder 2.");
                 }
 
-                Console.WriteLine("\nDrücke eine Taste, um fortzufahren...");
-                Console.ReadKey();
+                Thread.Sleep(1000);
+                while (!Console.KeyAvailable)
+                {
+                    Console.Write("\rDrücke eine Taste, um fortzufahren      ");
+                    Console.Write("\rDrück eine Taste um anzugreifen      ");
+                    Thread.Sleep(300);
+                    Console.Write("\rDrück eine Taste um anzugreifen.     ");
+                    Thread.Sleep(300);
+                    Console.Write("\rDrück eine Taste um anzugreifen..    ");
+                    Thread.Sleep(300);
+                    Console.Write("\rDrück eine Taste um anzugreifen...   ");
+                    Thread.Sleep(300);
+                }
             }
         }
     }
 }
+
