@@ -57,5 +57,18 @@ Heute haben wir damit begonnen, dass wenn man auf einen Gegner trifft, gewürfel
 
 ## 17.10
 
-- [ ] Kampfsystem fertig machen
+- [X] Kampfsystem fertig machen
 - [ ] Abilitys einfügen
+
+
+Wir haben zuerst damit begonnen, zusammen das Kampfsystem zu machen. Zuerst haben wir damit begonnen, dass beide Seiten immer nacheinander angreifen und auch Schaden machen. Jetzt funktioniert das Spiel zwar grob, man kann aber noch nicht über Welle 15 kommen, da der Kampf mit dem Boss gedacht war, nach dem man Upgrades bekommt und Fähigkeiten hat, welche es aber noch nicht gibt. Als Nächstes habe ich, da mein Internet nicht mehr ging, versucht, die Fähigkeiten zu machen, bin aber ohne Hilfe nicht sehr weit gekommen. Also habe ich einfach den Ablauf des Spieles und den Code etwas strukturierter gemacht und versucht zu verbessern.
+
+## Fertiges Projekt
+Unser Projekt ist ein Text RPG, bei dem man eine selbst ausgewählte Rolle spielen und damit Monster bekämpfen kann.
+![LP6](https://github.com/user-attachments/assets/24ae39ff-78d5-4817-bc93-a5acb890e0d6)
+
+
+
+## Reflexion
+Die LP6 war für uns eine gute Gelegenheit, unser Können in der OOP zu verbessern. Wir konnten sehr gut, das Gelernte aus dem Modul 320 anwenden und es dadurch besser verstehen. 
+Weil unser Projekt noch nicht abgeschlossen ist, möchten wir es in der nächsten LP weiterbearbeiten und fertig machen.
